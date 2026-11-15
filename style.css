@@ -1,0 +1,243 @@
+/*
+Made by Kathryn Fletcher
+Due November 15, 2026
+File name: styles.css
+*/
+
+/*CSS Reset*/
+body, header, nav, main, footer, h1, div, img, ul { 
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*Style rules for mobile viewport*/
+header {
+   /* position: -webkit-sticky;*/
+    position: sticky;
+    top: 0;
+    height: 190px;
+
+}
+
+header {
+    margin: 0 auto;
+}
+
+nav {
+    padding: 1%;
+    margin-bottom: 1%
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+  
+}
+
+
+/*Style Rule for Body*/
+body {
+    background-color: #7a6985
+} 
+
+/*Style to Center Hero Image*/
+img {
+    display: block;   /* Changes the inline element to a block element */
+    margin: 0 auto;   /* Splits left and right spacing evenly */
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+/*Style to Center Navigation Bar*/
+.navigation {
+  display: flex;
+  justify-content: center; /* Horizontally centers the items */
+  align-items: center;     /* Vertically centers the items */
+  gap: 20px;               /* Adds equal space between links */
+}
+
+/*Navigation Bar Style*/
+nav li {
+    display: inline-block;
+    font-size: 1.5em;
+    font-family: 'Lora', sans-serif;
+    /*Verdana, Arial, sans-serif;*/
+    font-weight: bold;
+    /* mobile viewport*/
+    /*header-top: 1px solid #fff;*/
+
+}
+
+/*Navigation Link Style*/
+nav li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+/*Main Body Elements
+main {
+    clear: left;
+    background-color: #82447c;
+    padding: 2%;
+    font-size: 1.25em;
+
+    border: 1px solid #000;
+    border-radius: 20px 20px 20px 20px;
+}*/
+
+
+/*Footer Style Element*/
+footer {
+    font-size: clamp(1.0rem, 2.5vw, 0.875rem);
+    text-align: center;
+    color: #fff;
+    padding: 1rem 1rem max(1rem, env(safe-area-inset-bottom));
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    }
+
+
+/*Show mobilw class, hide tablet-desktop class*/
+.mobile {
+    display: block;
+}
+
+.tablet-desktop {
+    display: none;
+}
+
+main {
+   /* clear: center;*/
+    padding: 2%;
+    font-size: 1.25em;
+
+    border: 1px solid #000;
+    border-radius: 20px 20px 20px 20px;
+}
+
+img {
+    max-width: 50%;
+    display: block
+}
+
+p {
+    color: white;
+}
+
+/* Tablet Design */
+@media only screen and (min-width:481px) {
+    nav li {
+    padding: 0;
+}
+}
+
+/*Desktop Design*/
+@media only screen and (min-width:1024px) {
+    header {
+        text-align: center;
+    }
+    /*nav{
+        float: center;
+    }*/
+}
+
+/* ============================================================
+   CSS INTERACTIVITY (Task 1)
+   - Rotate + scale on hover for the logo icon
+   - Slide-up + fade-in for the submit button on hover
+   - A subtle pulse animation on the "due date" badge
+   ============================================================ */
+
+/* --- Logo icon rotates and scales on hover --- */
+.logo i {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover i {
+    transform: rotate(360deg) scale(1.25);
+}
+
+/* --- Submit button lifts and slides on hover --- */
+.btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* --- Due-date badge gently pulses forever --- */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.06); }
+}
+
+.due-date {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   CSS INTERACTIVITY (Task 1)
+   - Rotate + scale on hover for the logo icon
+   - Slide-up + fade-in for the submit button on hover
+   - A subtle pulse animation on the "due date" badge
+   ============================================================ */
+
+/* --- Logo icon rotates and scales on hover --- */
+.logo i {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover i {
+    transform: rotate(360deg) scale(1.25);
+}
+
+/* --- Submit button lifts and slides on hover --- */
+.btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* --- Due-date badge gently pulses forever --- */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.06); }
+}
+
+.due-date {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* --- Respect users who prefer reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+    .logo i,
+    .btn,
+    .due-date {
+        transition: none;
+        animation: none;
+        transform: none;
+    }
+}
